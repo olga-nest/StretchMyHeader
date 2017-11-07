@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,9 +83,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="3BS-Q4-VVw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="pDo-vD-qfB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryk-aO-iZh">
+                                    <rect key="frame" x="8" y="8" width="181" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                            <constraints>
+                                <constraint firstItem="ryk-aO-iZh" firstAttribute="leading" secondItem="3BS-Q4-VVw" secondAttribute="leading" constant="8" id="3e5-ac-rsQ"/>
+                                <constraint firstAttribute="bottom" secondItem="pDo-vD-qfB" secondAttribute="bottom" id="7wZ-nk-SxX"/>
+                                <constraint firstItem="pDo-vD-qfB" firstAttribute="leading" secondItem="3BS-Q4-VVw" secondAttribute="leading" id="DLZ-dj-sRs"/>
+                                <constraint firstItem="ryk-aO-iZh" firstAttribute="width" secondItem="3BS-Q4-VVw" secondAttribute="width" multiplier="0.5" id="UXv-8s-Lmt"/>
+                                <constraint firstAttribute="trailing" secondItem="pDo-vD-qfB" secondAttribute="trailing" id="mDN-E8-MJp"/>
+                                <constraint firstItem="ryk-aO-iZh" firstAttribute="top" secondItem="3BS-Q4-VVw" secondAttribute="top" constant="8" id="qpg-sb-E04"/>
+                                <constraint firstItem="pDo-vD-qfB" firstAttribute="top" secondItem="3BS-Q4-VVw" secondAttribute="top" id="qvn-1U-eDJ"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" detailTextLabel="tpb-fJ-CvL" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="WCw-Qf-5nD" customClass="NewsItemTableViewCell" customModule="StretchMyHeader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -121,10 +147,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="ryk-aO-iZh" id="W0x-nr-nkR"/>
+                        <outlet property="headerView" destination="3BS-Q4-VVw" id="rSZ-kI-BuK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -143,6 +173,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="621" height="412"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
