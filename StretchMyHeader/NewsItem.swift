@@ -35,25 +35,27 @@ struct NewsItem {
                 return "Asia Pacific"
             }
         }
+        
+        
+        func getCategoryColor() -> UIColor {
+            switch self {
+            case .World:
+                return UIColor.red
+            case .Americas:
+                return UIColor.blue
+            case .Europe:
+                return UIColor.green
+            case .MiddleEast:
+                return UIColor.yellow
+            case .Africa:
+                return UIColor.orange
+            case .AsiaPacicic:
+                return UIColor.purple
+            }
+            
+        }
     }
-}
-
-func getCategoryColor() -> UIColor {
-    switch self {
-    case .World:
-        return UIColor.red
-    case .Americas:
-        return UIColor.blue
-    case .Europe:
-        return UIColor.green
-    case .MiddleEast:
-        return UIColor.yellow
-    case .Africa:
-        return UIColor.orange
-    case .AsiaPacicic:
-        return UIColor.purple
-    }
-   
+    
     let category: NewsCategory
     let headline: String
     
