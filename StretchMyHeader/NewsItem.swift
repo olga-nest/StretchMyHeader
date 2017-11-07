@@ -7,17 +7,54 @@
 //
 
 import Foundation
+import UIKit
 
 struct NewsItem {
     
-    struct Category {
-        static let world = "World"
-        static let americas = "Americas"
-        static let europe = "Europe"
-        static let middleEast = "Middle East"
-        static let africa  = "Africa"
-        static let asia = "Asia Pacific"
+    enum NewsCategory {
+        case World
+        case Americas
+        case Europe
+        case MiddleEast
+        case Africa
+        case AsiaPacicic
         
+        func toString() -> String {
+            switch self {
+            case .World:
+                return "World"
+            case .Americas:
+                return "Americas"
+            case .Europe:
+                return "Europe"
+            case .MiddleEast:
+                return "Middle East"
+            case .Africa:
+                return "Africa"
+            case .AsiaPacicic:
+                return "Asia Pacific"
+            }
+        }
     }
+}
+
+func getCategoryColor() -> UIColor {
+    switch self {
+    case .World:
+        return UIColor.red
+    case .Americas:
+        return UIColor.blue
+    case .Europe:
+        return UIColor.green
+    case .MiddleEast:
+        return UIColor.yellow
+    case .Africa:
+        return UIColor.orange
+    case .AsiaPacicic:
+        return UIColor.purple
+    }
+   
+    let category: NewsCategory
+    let headline: String
     
 }
